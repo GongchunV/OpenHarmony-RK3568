@@ -1,0 +1,30 @@
+import("//build/ohos.gni")
+import("//drivers/hdf_core/adapter/uhdf2/uhdf.gni")
+
+print("samples: compile rk3568_uart_test")
+ohos_executable("A2_gcwuart") {
+  sources = [ "src/uart_test.c" ]
+  include_dirs = [
+    "//drivers/hdf_core/framework/include/platform",
+    "//third_party/bounds_checking_function/include",
+  ]
+
+  deps = []
+
+  external_deps = [
+    "c_utils:utils",
+    "hdf_core:libhdf_utils",
+    "hdf_core:libhdf_platform",
+  ]
+
+  cflags = [
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wno-format",
+    "-Wno-format-extra-args",
+  ]
+
+  part_name = "A2_uart"
+  install_enable = true
+}
