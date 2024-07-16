@@ -1,0 +1,32 @@
+import("//build/ohos.gni")
+import("//drivers/hdf_core/adapter/uhdf2/uhdf.gni")
+
+print("gcw  napigpio_test BUILD.gn file")
+ohos_executable("A4_napigpio") {
+  sources = [ "src/napi_gpio.c" ]
+  include_dirs = [
+    "include", 
+    "//drivers/hdf_core/framework/include/platform",
+    "//third_party/bounds_checking_function/include",
+  ]
+
+  deps = []
+
+  external_deps = [
+    "c_utils:utils",
+    "hdf_core:libhdf_utils",
+    "hdf_core:libhdf_platform",
+    "hilog:libhilog",
+  ]
+
+  cflags = [
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wno-format",
+    "-Wno-format-extra-args",
+  ]
+
+  part_name = "A4_gpio" 
+  install_enable = true       
+}

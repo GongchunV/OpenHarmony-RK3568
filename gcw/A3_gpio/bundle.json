@@ -1,0 +1,36 @@
+{
+    "name": "@ohos/A3_gpio",
+    "description": "gcw gpio test",
+    "version": "3.1",
+    "license": "Apache License 2.0",
+    "publishAs": "code-segment",
+    "segment": {
+        "destPath": "gcw/A3_gpio"
+    },
+    "dirs": {},
+    "scripts": {},
+    "component": {
+        "name": "A3_gpio",
+        "subsystem": "gcw",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": ["standard"],
+        "rom": "100KB",
+        "ram": "100KB",
+        "deps": {
+            "components": [
+                "c_utils",    
+                "hdf_core",
+                "hilog"
+            ],
+            "third_party": []
+        },
+        "build": {
+            "sub_component": [
+                "//gcw/A3_gpio:A3_gcwgpio"
+            ],
+            "inner_kits": [],
+            "test": []
+        }
+    }
+}
